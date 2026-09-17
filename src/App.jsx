@@ -163,6 +163,7 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
     bundleQty:        1,
     chassisPn:        null,
     sduPn:            null,
+    sduQty:           1,
     sduRedundancy:    false,     // adds 2nd SDU
     mluPn:            null,
     mluQty:           1,
@@ -303,11 +304,10 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
         const chassis = P(sel.chassisPn);
         if (chassis) items.push({ ...chassis, qty: n });
 
-        // SDU (+ optional redundant 2nd SDU)
+        // SDU (qty-controlled: 1 for ML230/CHS-200, 1-2 for ML2300/CHS-2000B)
         const sdu = P(sel.sduPn);
         if (sdu) {
-          items.push({ ...sdu, qty: n });
-          if (sel.sduRedundancy) items.push({ ...sdu, desc: sdu.desc + " (Redundant)", qty: n });
+          items.push({ ...sdu, qty: (sel.sduQty ?? 1) * n });
         }
 
         // MLU
@@ -1015,24 +1015,51 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
                 <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:6, marginBottom:8 }}>
                   {["503R60042","503R60043","503R60041"].map(pn => <ProdBtn key={pn} pn={pn} selected={sel.sduPn} onSelect={pn=>set("sduPn",pn)} region={region} custType={custType} dealReg={dealReg} />)}
                 </div>
-                {sel.sduPn && (
-                  <AccRow pn={sel.sduPn} label="SDU Redundancy (add 2nd SDU)" hint="Backup SDU — same model"
-                    checked={sel.sduRedundancy} onChange={v=>set("sduRedundancy",v)} />
-                )}
+                {sel.sduPn && (()=>{
+                  const isCHS2000B = sel.chassisPn === "502R02110";
+                  // ML230 = 1 SDU slot; ML2300B = 2 SDU slots (Source: Table 10, ML230/ML2300 Manual 520R69659E)
+                  const maxSDU = isCHS2000B ? 2 : 1;
+                  return (
+                    <div>
+                      <Label>{isCHS2000B ? "SDU Quantity (ML2300B has 2 SDU slots — 1 active + 1 redundant)" : "SDU Quantity (ML230 has 1 SDU slot)"}</Label>
+                      <Counter v={sel.sduQty ?? 1} min={1} max={maxSDU} set={v=>set("sduQty",v)} />
+                    </div>
+                  );
+                })()}
               </div>
 
               {/* MLU */}
               <div style={{ marginBottom:8 }}>
                 <Label>MLU (Multiport Line Unit)</Label>
                 <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:6, marginBottom:8 }}>
-                  {["503R20132","503R20164","503R20232","503R20264"].map(pn => <ProdBtn key={pn} pn={pn} selected={sel.mluPn} onSelect={pn=>set("mluPn",pn)} region={region} custType={custType} dealReg={dealReg} />)}
+                  {["503R20132","503R20164","503R20232","503R20264"].map(pn => <ProdBtn key={pn} pn={pn} selected={sel.mluPn} onSelect={pn=>{set("mluPn",pn); set("mluQty",1);}} region={region} custType={custType} dealReg={dealReg} />)}
                 </div>
-                {sel.mluPn && (
-                  <div>
-                    <Label>MLU Quantity (CHS-2000B fits up to 2 MLUs)</Label>
-                    <Counter v={sel.mluQty} min={1} max={sel.chassisPn==="502R02110"?2:1} set={v=>set("mluQty",v)} />
-                  </div>
-                )}
+                {sel.mluPn && (()=>{
+                  const isCHS2000B = sel.chassisPn === "502R02110";
+                  // ML230 = 2 MLU slots; ML2300B = 4 MLU slots (Source: Table 10, ML230/ML2300 Manual 520R69659E)
+                  const maxMLU = isCHS2000B ? 4 : 2;
+                  const mluDesc = P(sel.mluPn)?.desc ?? "";
+                  const is64pair = mluDesc.includes("64");
+                  const isFront = sel.mluPn === "503R20164" || sel.mluPn === "503R20132"; // DF = front-access FCI
+                  return (
+                    <div>
+                      <Label>MLU Quantity ({isCHS2000B ? "ML2300B: max 4 slots" : "ML230: max 2 slots"})</Label>
+                      <Counter v={sel.mluQty} min={1} max={maxMLU} set={v=>set("mluQty",v)} />
+                      {/* Conditional SDU warning for 64-pair MLUs on CHS-2000B */}
+                      {isCHS2000B && is64pair && (
+                        <div style={{marginTop:6,padding:"7px 10px",background:"#FFFBEB",borderRadius:6,border:"1px solid #FCD34D",fontSize:11,color:"#92400E",fontWeight:600}}>
+                          ⚠ MLU-64 cards on ML2300B require SDU-450, SDU-450G, or SDU-455G (not SDU-440/440G).
+                        </div>
+                      )}
+                      {/* Front-access (DF) cable note */}
+                      {isFront && (
+                        <div style={{marginTop:6,padding:"7px 10px",background:"#F0F9FF",borderRadius:6,border:"1px solid #BAE6FD",fontSize:11,color:"#0369A1"}}>
+                          ℹ Front-access (DF) MLUs use a 144-pin FCI connector. No cable P/N is established in the Actelis Parts List — cables must be sourced separately.
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
 
               {/* Node Count */}
@@ -1055,12 +1082,42 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
 
               {sel.ml230mode === "custom" && (
                 <>
-                  {/* ── CHS-2000B: 64-pair DIN MLU Copper Cables ── */}
+                  {/* ── CHS-2000B: MLU Copper Cables ── */}
                   {sel.chassisPn === "502R02110" && (
                     <div style={{ marginBottom:16 }}>
-                      <AccRow pn="504R60062" label="Include MLU Copper Cables?" hint="64-pair DIN connector — 1 cable per MLU"
-                        checked={sel.mluCableInclude} onChange={v=>set("mluCableInclude",v)} />
-                      {sel.mluCableInclude && (
+                      {(()=>{
+                        // Source: Actelis ML230/ML2300 Manual 520R69659E, Appendix B Table 145
+                        // DF (front-access) MLUs use 144-pin FCI connector — no cable P/N in Parts List
+                        // DR (rear-access) MLUs use 128-pin DIN connector — cables 504R60060/62/63/87/88
+                        const isFrontDF = sel.mluPn === "503R20132" || sel.mluPn === "503R20164";
+                        const mluDesc = P(sel.mluPn)?.desc ?? "";
+
+                        if (isFrontDF) {
+                          return (
+                            <div style={{padding:"12px 14px",background:"#F0F9FF",borderRadius:8,border:"1px solid #BAE6FD"}}>
+                              <div style={{fontSize:12,fontWeight:700,color:"#0369A1",marginBottom:4}}>ℹ Front-Access (DF) MLU — 144-pin FCI Connector</div>
+                              <div style={{fontSize:11,color:"#0C4A6E",lineHeight:1.5}}>
+                                Front-access DF MLUs ({mluDesc}) use a <strong>144-pin FCI connector</strong>.
+                                No matching cable P/N is established in the Actelis Parts List (Appendix B, Table 145).
+                                Cables for front-access MLUs must be sourced separately — do not use the 128-pin DIN cables.
+                              </div>
+                            </div>
+                          );
+                        }
+
+                        // Rear-access (DR / ER) MLUs — 128-pin DIN cables
+                        const autoCableQty = sel.mluQty;
+                        return (
+                          <>
+                            <div style={{padding:"8px 12px",background:"#F0FDF4",borderRadius:7,border:"1px solid #BBF7D0",marginBottom:10,fontSize:11,color:"#166534",fontWeight:600}}>
+                              ✓ Rear-access ({mluDesc}) uses 128-pin DIN connector → {autoCableQty} × 64-pair DIN cable{autoCableQty>1?"s":""}
+                            </div>
+                            <AccRow pn="504R60062" label="Include MLU Copper Cables?" hint={`128-pin DIN — 1 cable per MLU card`}
+                              checked={sel.mluCableInclude} onChange={v=>set("mluCableInclude",v)} />
+                          </>
+                        );
+                      })()}
+                      {sel.mluCableInclude && !["503R20132","503R20164"].includes(sel.mluPn) && (
                         <div style={{ marginLeft:12, padding:"12px 14px", background:"#F8FAFC", borderRadius:8, border:"1px solid #E2E8F0", marginTop:6 }}>
                           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12, marginBottom:12 }}>
                             <div>
@@ -1068,7 +1125,7 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
                               <div style={{ display:"flex", gap:6 }}>
                                 {["US","EU"].map(c => (
                                   <button key={c} onClick={()=>set("mluCableColor",c)}
-                                    style={{ flex:1, padding:"7px", borderRadius:6, border:`2px solid ${sel.mluCableColor===c?"#D97706":"#E2E8F0"}`, background:sel.mluCableColor===c?"#FFFBEB":"white", cursor:"pointer", fontWeight:700, fontSize:13, color:"#1A2035" }}>
+                                    style={{ flex:1, padding:"7px", borderRadius:6, border:`2px solid ${sel.mluCableColor===c?A:"#E2E8F0"}`, background:sel.mluCableColor===c?"#FFF7F5":"white", cursor:"pointer", fontWeight:700, fontSize:13, color:"#1A2035" }}>
                                     {c} Color Code
                                   </button>
                                 ))}
@@ -1079,7 +1136,7 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
                               <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
                                 {["25ft","100ft","150ft"].map(d => (
                                   <button key={d} onClick={()=>set("mluCableDistance",d)}
-                                    style={{ flex:1, padding:"7px", borderRadius:6, border:`2px solid ${sel.mluCableDistance===d?"#D97706":"#E2E8F0"}`, background:sel.mluCableDistance===d?"#FFFBEB":"white", cursor:"pointer", fontWeight:700, fontSize:13, color:"#1A2035" }}>
+                                    style={{ flex:1, padding:"7px", borderRadius:6, border:`2px solid ${sel.mluCableDistance===d?A:"#E2E8F0"}`, background:sel.mluCableDistance===d?"#FFF7F5":"white", cursor:"pointer", fontWeight:700, fontSize:13, color:"#1A2035" }}>
                                     {d}
                                   </button>
                                 ))}
@@ -1091,11 +1148,12 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
                             const cableMap = {"US-25ft":"504R60060","US-100ft":"504R60062","US-150ft":"504R60063","EU-100ft":"504R60088","EU-25ft":"504R60060","EU-150ft":"504R60063"};
                             const pn = cableMap[`${sel.mluCableColor}-${sel.mluCableDistance}`] || "504R60062";
                             const prod = P(pn);
+                            const qty = sel.mluQty * (sel.nodeCount||1);
                             return prod ? (
                               <div style={{ padding:"8px 10px", background:"white", borderRadius:6, border:"1px solid #E2E8F0", fontSize:12 }}>
                                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
                                   <span style={{ color:"#1A2035", fontWeight:600 }}>{prod.desc}</span>
-                                  <span style={{ fontWeight:700, color:"#0B1D3A" }}>{$(prod.price)} × {sel.mluQty*(sel.nodeCount||1)}</span>
+                                  <span style={{ fontWeight:700, color:"#0B1D3A" }}>{$(prod.price)} × {qty}</span>
                                 </div>
                                 <code style={{ fontSize:10, color:"#94A3B8" }}>{pn}</code>
                               </div>
@@ -1106,36 +1164,69 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
                     </div>
                   )}
 
-                  {/* ── CHS-200: RJ-45 DSL Cables ── */}
+                  {/* ── CHS-200: MLU DSL Cables ── */}
                   {sel.chassisPn === "502R20230" && (
                     <div style={{ marginBottom:16 }}>
-                      <AccRow pn="504R20120" label="Include MLU DSL Cables?" hint="RJ-45 octal/quad cables — qty auto-set per MLU"
-                        checked={sel.chs200CableInclude} onChange={v=>set("chs200CableInclude",v)} />
-                      {sel.chs200CableInclude && (
-                        <div style={{ marginLeft:12, padding:"12px 14px", background:"#F8FAFC", borderRadius:8, border:"1px solid #E2E8F0", marginTop:6 }}>
-                          <Label>Cable Type & Distance</Label>
-                          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:6, marginBottom:10 }}>
-                            {[
-                              { pn:"504R20110", label:"Quad 4×RJ-45  10ft/3m" },
-                              { pn:"504R20140", label:"Quad 4×RJ-45  100ft/30m" },
-                              { pn:"504R20120", label:"Octal 8×RJ-45 10ft/3m" },
-                              { pn:"504R20160", label:"Octal 8×RJ-45 100ft/30m" },
-                              { pn:"504R20180", label:"Octal 8×RJ-45 150ft/50m" },
-                            ].map(opt => (
-                              <button key={opt.pn} onClick={()=>set("chs200CablePn",opt.pn)}
-                                style={{ textAlign:"left", padding:"8px 10px", borderRadius:7, border:`2px solid ${sel.chs200CablePn===opt.pn?"#D97706":"#E2E8F0"}`, background:sel.chs200CablePn===opt.pn?"#FFFBEB":"white", cursor:"pointer" }}>
-                                <div style={{ fontSize:12, fontWeight:600, color:"#1A2035" }}>{opt.label}</div>
-                                <div style={{ display:"flex", justifyContent:"space-between", marginTop:2 }}>
-                                  <code style={{ fontSize:10, color:"#94A3B8" }}>{opt.pn}</code>
-                                  <span style={{ fontSize:11, fontWeight:700, color:"#0B1D3A" }}>{$(P(opt.pn)?.price)}</span>
-                                </div>
-                              </button>
-                            ))}
+                      {(()=>{
+                        // Source: Actelis ML230/ML2300 Manual 520R69659E, Appendix B Table 145
+                        // DF (front-access) MLUs: 144-pin FCI — no cable P/N in Parts List
+                        // DR (rear-access) MLUs: 128-pin DIN — same cable set as CHS-2000B
+                        const isFrontDF = sel.mluPn === "503R20132" || sel.mluPn === "503R20164";
+                        const mluDesc = P(sel.mluPn)?.desc ?? "";
+
+                        if (isFrontDF) {
+                          return (
+                            <div style={{padding:"12px 14px",background:"#F0F9FF",borderRadius:8,border:"1px solid #BAE6FD"}}>
+                              <div style={{fontSize:12,fontWeight:700,color:"#0369A1",marginBottom:4}}>ℹ Front-Access (DF) MLU — 144-pin FCI Connector</div>
+                              <div style={{fontSize:11,color:"#0C4A6E",lineHeight:1.5}}>
+                                Front-access DF MLUs ({mluDesc}) use a <strong>144-pin FCI connector</strong>.
+                                No cable P/N is established in the Actelis Parts List for this connector type.
+                                Cables must be sourced separately — do not use the RJ-45 or 128-pin DIN cables.
+                              </div>
+                            </div>
+                          );
+                        }
+                        // DR rear-access: 128-pin DIN cables
+                        return (
+                          <div style={{padding:"8px 12px",background:"#F0FDF4",borderRadius:7,border:"1px solid #BBF7D0",fontSize:11,color:"#166534",fontWeight:600}}>
+                            ✓ Rear-access ({mluDesc}) uses 128-pin DIN connector — same cable set as ML2300B
                           </div>
-                          <Label>Cable Quantity</Label>
-                          <Counter v={sel.chs200CableQty} min={1} max={9999} set={v=>set("chs200CableQty",v)} />
-                          <div style={{ fontSize:11, color:"#64748B", marginTop:4 }}>Tip: MLU-64 needs 8 octal cables; MLU-32 needs 4 octal or 8 quad cables.</div>
-                        </div>
+                        );
+                      })()}
+                      {!["503R20132","503R20164"].includes(sel.mluPn) && (
+                        <>
+                          <div style={{marginTop:8}}>
+                            <AccRow pn="504R20120" label="Include MLU DSL Cables?" hint="128-pin DIN cables — qty auto-calculated"
+                              checked={sel.chs200CableInclude} onChange={v=>set("chs200CableInclude",v)} />
+                          </div>
+                          {sel.chs200CableInclude && (
+                            <div style={{ marginLeft:12, padding:"12px 14px", background:"#F8FAFC", borderRadius:8, border:"1px solid #E2E8F0", marginTop:6 }}>
+                              <Label>Cable Type &amp; Distance (128-pin DIN)</Label>
+                              <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:6, marginBottom:10 }}>
+                                {[
+                                  { pn:"504R60060", label:"128-pin DIN  25ft / 7.6m" },
+                                  { pn:"504R60062", label:"128-pin DIN  100ft / 30m" },
+                                  { pn:"504R60063", label:"128-pin DIN  150ft / 45m" },
+                                  { pn:"504R60088", label:"128-pin FCI  100ft / 30m (EU)" },
+                                ].map(opt => {
+                                  const autoQty = sel.mluQty;
+                                  return (
+                                    <button key={opt.pn} onClick={()=>{ set("chs200CablePn",opt.pn); set("chs200CableQty", autoQty); }}
+                                      style={{ textAlign:"left", padding:"9px 11px", borderRadius:7, border:`2px solid ${sel.chs200CablePn===opt.pn?A:"#E2E8F0"}`, background:sel.chs200CablePn===opt.pn?"#FFF7F5":"white", cursor:"pointer" }}>
+                                      <div style={{ fontSize:12, fontWeight:600, color:"#1A2035" }}>{opt.label}</div>
+                                      <div style={{ display:"flex", justifyContent:"space-between", marginTop:3 }}>
+                                        <code style={{ fontSize:10, color:"#94A3B8" }}>{opt.pn}</code>
+                                        <span style={{ fontSize:11, fontWeight:700, color:"#0B1D3A" }}>{$(P(opt.pn)?.price)}</span>
+                                      </div>
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                              <Label>Cable Quantity (1 per MLU card)</Label>
+                              <Counter v={sel.chs200CableQty} min={1} max={9999} set={v=>set("chs200CableQty",v)} />
+                            </div>
+                          )}
+                        </>
                       )}
                     </div>
                   )}
