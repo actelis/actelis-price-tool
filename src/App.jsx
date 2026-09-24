@@ -231,10 +231,9 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
       if (sel.ptpCablePn) {
         const cable = P(sel.ptpCablePn);
         if (cable) {
-          const ML600_PAIRS={"501RG0218":16,"510KG0065":16,"501RG0238":16,"501RG0115":16,"501RG0111":16,"501RG0254":16};
-          const needs2 = ML600_PAIRS[sel.unitPn]===16;
-          const cableQty = needs2 ? Math.max(2, sel.ptpCableQty) : sel.ptpCableQty;
-          items.push({ ...cable, qty: cableQty });
+          // 16-pair units now use dual-port cables (504R60098/100) — 1 cable covers all 16 pairs
+          // Standard qty from sel.ptpCableQty is correct; no forced multiplier needed
+          items.push({ ...cable, qty: sel.ptpCableQty });
         }
       }
       // Power supplies
@@ -692,15 +691,27 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
                 { pn:"504R20160", label:"Octal DSL · 8×RJ-45 · 100ft / 30m", hint:"covers 8 pairs" },
                 { pn:"504R20180", label:"Octal DSL · 8×RJ-45 · 150ft / 50m", hint:"covers 8 pairs" },
               ],
+              // 16-pair units use DUAL-PORT RJ45 cables (2 pairs per plug, 8 plugs = 16 pairs)
+              // Matrix source: 504R60098/100 REQ for ML6416/ML6416E/GL800-16
+              dualPort: [
+                { pn:"504R60098", label:"Octal Dual-Port · 8×dual-RJ45 · 10ft / 3m",   hint:"covers all 16 pairs in 1 cable" },
+                { pn:"504R60100", label:"Octal Dual-Port · 8×dual-RJ45 · 100ft / 30m", hint:"covers all 16 pairs in 1 cable" },
+              ],
             };
 
             const numPairs  = ML600_PAIRS[sel.unitPn] ?? null;
             const isFiber   = numPairs === 0;
-            const isSmall   = numPairs !== null && numPairs < 8;   // 2 or 4 pair → quad only
-            const isLarge   = numPairs !== null && numPairs >= 8;  // 8 or 16 pair → octal
-            const needsTwo  = numPairs === 16;                     // 16p → 2 octal cables
+            const isSmall   = numPairs !== null && numPairs <= 4;    // 2 or 4 pair → quad only
+            const is8pair   = numPairs === 8;                        // 8 pair → octal
+            const is16pair  = numPairs === 16;                       // 16 pair → DUAL-PORT only
 
-            const availCables = isFiber ? [] : isSmall ? ALL_CABLES.quad : isLarge ? ALL_CABLES.octal : [...ALL_CABLES.quad, ...ALL_CABLES.octal];
+            // 16-pair units use dual-port cables (504R60098/100) — NOT standard quad/octal
+            // Source: Actelis compatibility matrix; ML6416/ML6416E/GL800-16 REQ dual-port
+            const availCables = isFiber ? []
+              : isSmall   ? ALL_CABLES.quad
+              : is8pair   ? ALL_CABLES.octal
+              : is16pair  ? ALL_CABLES.dualPort
+              : [...ALL_CABLES.quad, ...ALL_CABLES.octal];
 
             // Auto-clear invalid selection when unit changes
             const cableValid = !sel.ptpCablePn || availCables.some(c=>c.pn===sel.ptpCablePn);
@@ -723,11 +734,11 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
                 ) : (
                   <>
                     {numPairs && (
-                      <div style={{marginBottom:10,padding:"8px 12px",background:isSmall?"#FFF7ED":"#F0FDF4",borderRadius:6,border:`1px solid ${isSmall?"#FED7AA":"#BBF7D0"}`,fontSize:11,color:isSmall?"#92400E":"#166534",fontWeight:600}}>
+                      <div style={{marginBottom:10,padding:"8px 12px",background:isSmall?"#FFF7ED":is16pair?"#F0F9FF":"#F0FDF4",borderRadius:6,border:`1px solid ${isSmall?"#FED7AA":is16pair?"#BAE6FD":"#BBF7D0"}`,fontSize:11,color:isSmall?"#92400E":is16pair?"#0369A1":"#166534",fontWeight:600}}>
                         {isSmall
                           ? `⚠ ${numPairs}-pair unit — Quad cables only (4×RJ-45 connector)`
-                          : needsTwo
-                          ? `ℹ 16-pair unit — requires 2× Octal cables (one per 8 pairs)`
+                          : is16pair
+                          ? `ℹ 16-pair unit — requires Dual-Port Octal cables (8×dual-RJ45, 2 pairs/plug). Do NOT use standard quad or octal cables.`
                           : `✓ 8-pair unit — Octal cables (8×RJ-45 connector)`}
                       </div>
                     )}
@@ -757,11 +768,9 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
 
                     {sel.ptpCablePn && cableValid && (
                       <div>
-                        <Label>{needsTwo?"Cable Quantity (min 2 for 16-pair unit)":"Cable Quantity"}</Label>
-                        <Counter v={sel.ptpCableQty} min={needsTwo?2:1} max={9999} set={v=>set("ptpCableQty",v)} />
-                        {needsTwo && sel.ptpCableQty < 2 &&
-                          <div style={{fontSize:11,color:"#EF4444",marginTop:4}}>⚠ 16-pair unit needs at least 2 octal cables (1 per 8 pairs)</div>
-                        }
+                        <Label>{is16pair?"Cable Quantity (1 dual-port cable covers all 16 pairs)":"Cable Quantity"}</Label>
+                        <Counter v={sel.ptpCableQty} min={1} max={9999} set={v=>set("ptpCableQty",v)} />
+                        {is16pair && <div style={{fontSize:11,color:"#0369A1",marginTop:4}}>ℹ Each dual-port cable handles all 16 pairs (8 plugs × 2 pairs each).</div>}
                       </div>
                     )}
                     {sel.ptpCablePn && !cableValid && (
@@ -916,20 +925,89 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
               <StepHeader title="Accessories" sub="Power supplies are applied per total unit count (headend + CPEs)." />
 
               {/* GL800 accessories */}
-              {type === "PTMP_GL800" && [
-                { pn: isNA?"506R00013":"506R00013E", label:`GL800 Power Supply (${isNA?"NA":"EU"})`, hint:"1 per unit" },
-                { pn: "510R21080", label:"Wall Mount Kit", hint:"1 per unit" },
-              ].map(acc => <AccRow key={acc.pn} pn={acc.pn} label={acc.label} hint={acc.hint} checked={!!sel.glAcc[acc.pn]} onChange={v=>setAcc("glAcc",acc.pn,v)} />)}
+              {type === "PTMP_GL800" && (()=>{
+                // Determine if headend is 16-pair or 8-pair
+                const is16p = gl800Ports === 16; // GL830-16O/R, GL850L-16O/R
+                return (
+                  <>
+                    {/* DSL Cable section — matrix-sourced */}
+                    <div style={{marginBottom:14,padding:"10px 12px",background:"#F8FAFC",borderRadius:8,border:"1px solid #E2E8F0"}}>
+                      <Label>DSL Cables</Label>
+                      {is16p ? (
+                        <>
+                          <div style={{fontSize:11,color:"#0369A1",marginBottom:8,fontWeight:600}}>
+                            ℹ 16-pair headend — requires Dual-Port Octal cables (504R60098 / 504R60100). Standard quad/octal cables do NOT fit.
+                          </div>
+                          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
+                            {[{pn:"504R60098",label:"Dual-Port Octal 10ft/3m"},{pn:"504R60100",label:"Dual-Port Octal 100ft/30m"}].map(c=>(
+                              <AccRow key={c.pn} pn={c.pn} label={c.label} hint="8×dual-RJ45, covers 16 pairs"
+                                checked={!!sel.glAcc[c.pn]} onChange={v=>setAcc("glAcc",c.pn,v)} />
+                            ))}
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div style={{fontSize:11,color:"#166534",marginBottom:8,fontWeight:600}}>
+                            ✓ 8-pair headend — standard Octal cables (8×RJ-45)
+                          </div>
+                          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
+                            {[{pn:"504R20120",label:"Octal 10ft/3m"},{pn:"504R20160",label:"Octal 100ft/30m"},{pn:"504R20180",label:"Octal 150ft/50m"}].map(c=>(
+                              <AccRow key={c.pn} pn={c.pn} label={c.label} hint="8×RJ-45, covers 8 pairs"
+                                checked={!!sel.glAcc[c.pn]} onChange={v=>setAcc("glAcc",c.pn,v)} />
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    {[
+                      { pn: isNA?"506R00013":"506R00013E", label:`GL800 Power Supply (${isNA?"NA":"EU"})`, hint:"1 per unit — GL800-specific 45W adapter" },
+                      { pn: "504R20010", label:"Craft Cable DB9 (both ends)", hint:"For local management" },
+                      { pn: "510R21080", label:"Wall Mount Kit", hint:"1 per unit" },
+                      { pn: "510R21070", label:"Rack Mount Sleeve Kit", hint:"holds 2 units" },
+                    ].map(acc => <AccRow key={acc.pn} pn={acc.pn} label={acc.label} hint={acc.hint} checked={!!sel.glAcc[acc.pn]} onChange={v=>setAcc("glAcc",acc.pn,v)} />)}
+                  </>
+                );
+              })()}
 
               {/* GL900 accessories */}
               {type === "PTMP_GL900" && (()=>{
-                // UK is EMEA region — UK-specific PSU variant
-                const isUK = region?.name==="EMEA" && false; // UK not a separate region in current config
-                const psuPn = isNA ? "506R00008" : "506R00008U"; // U suffix = UK/EU variant
-                return [
-                  { pn: psuPn, label:`GL900 Power Supply (${isNA?"NA":"EU/UK"})`, hint:"1 per unit" },
-                  { pn: "510R21080", label:"Wall Mount Kit", hint:"1 per unit" },
-                ].map(acc => <AccRow key={acc.pn} pn={acc.pn} label={acc.label} hint={acc.hint} checked={!!sel.glAcc[acc.pn]} onChange={v=>setAcc("glAcc",acc.pn,v)} />);
+                const psuPn = isNA ? "506R00008" : "506R00008U";
+                // Determine pair count from selected headend
+                const headendDesc = P(sel.headendPn)?.desc ?? "";
+                const gl900is16 = headendDesc.includes("916") || headendDesc.includes("16");
+                return (
+                  <>
+                    {/* DSL cables — matrix: GL908 (8p) = octal REQ; GL916 (16p) = dual-port REQ */}
+                    <div style={{marginBottom:14,padding:"10px 12px",background:"#F8FAFC",borderRadius:8,border:"1px solid #E2E8F0"}}>
+                      <Label>DSL Cables</Label>
+                      {gl900is16 ? (
+                        <>
+                          <div style={{fontSize:11,color:"#0369A1",marginBottom:8,fontWeight:600}}>
+                            ℹ GL916 (16 pairs) — Dual-Port Octal cables required (504R60098 / 504R60100)
+                          </div>
+                          {[{pn:"504R60098",label:"Dual-Port Octal 10ft/3m"},{pn:"504R60100",label:"Dual-Port Octal 100ft/30m"}].map(c=>(
+                            <AccRow key={c.pn} pn={c.pn} label={c.label} hint="8×dual-RJ45, covers 16 pairs"
+                              checked={!!sel.glAcc[c.pn]} onChange={v=>setAcc("glAcc",c.pn,v)} />
+                          ))}
+                        </>
+                      ) : (
+                        <>
+                          <div style={{fontSize:11,color:"#166534",marginBottom:8,fontWeight:600}}>
+                            ✓ GL908 (8 pairs) — Octal cables
+                          </div>
+                          {[{pn:"504R20120",label:"Octal 10ft/3m"},{pn:"504R20160",label:"Octal 100ft/30m"},{pn:"504R20180",label:"Octal 150ft/50m"}].map(c=>(
+                            <AccRow key={c.pn} pn={c.pn} label={c.label} hint="8×RJ-45, covers 8 pairs"
+                              checked={!!sel.glAcc[c.pn]} onChange={v=>setAcc("glAcc",c.pn,v)} />
+                          ))}
+                        </>
+                      )}
+                    </div>
+                    {[
+                      { pn: psuPn, label:`GL900 Power Supply (${isNA?"NA":"EU/UK"})`, hint:"Required for non-R headend models" },
+                      { pn: "510R21080", label:"Wall Mount Kit", hint:"1 per unit" },
+                    ].map(acc => <AccRow key={acc.pn} pn={acc.pn} label={acc.label} hint={acc.hint} checked={!!sel.glAcc[acc.pn]} onChange={v=>setAcc("glAcc",acc.pn,v)} />)}
+                  </>
+                );
               })()}
 
               {/* GL9000 accessories — headend is 48VDC built-in, no external PSU needed */}
@@ -1083,69 +1161,101 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
               {sel.ml230mode === "custom" && (
                 <>
                   {/* ── CHS-2000B: MLU Copper Cables ── */}
+                  {/* Source: Actelis compatibility matrix (44 PDFs)
+                      MLU-32EF (503R20053): 2x 50-pin Telco front → 50-pin Champ cables, 2 per card
+                      MLU-32DR/64DR/32ER (rear DIN-128): US 504R60060/62/63, EU 504R60084/85/86
+                      MLU-32DF/64DF (front 144-pin FCI): no cable P/N established */}
                   {sel.chassisPn === "502R02110" && (
                     <div style={{ marginBottom:16 }}>
                       {(()=>{
-                        // Source: Actelis ML230/ML2300 Manual 520R69659E, Appendix B Table 145
-                        // DF (front-access) MLUs use 144-pin FCI connector — no cable P/N in Parts List
-                        // DR (rear-access) MLUs use 128-pin DIN connector — cables 504R60060/62/63/87/88
-                        const isFrontDF = sel.mluPn === "503R20132" || sel.mluPn === "503R20164";
-                        const mluDesc = P(sel.mluPn)?.desc ?? "";
-
-                        if (isFrontDF) {
-                          return (
-                            <div style={{padding:"12px 14px",background:"#F0F9FF",borderRadius:8,border:"1px solid #BAE6FD"}}>
-                              <div style={{fontSize:12,fontWeight:700,color:"#0369A1",marginBottom:4}}>ℹ Front-Access (DF) MLU — 144-pin FCI Connector</div>
-                              <div style={{fontSize:11,color:"#0C4A6E",lineHeight:1.5}}>
-                                Front-access DF MLUs ({mluDesc}) use a <strong>144-pin FCI connector</strong>.
-                                No matching cable P/N is established in the Actelis Parts List (Appendix B, Table 145).
-                                Cables for front-access MLUs must be sourced separately — do not use the 128-pin DIN cables.
-                              </div>
+                        const isEF     = sel.mluPn === "503R20053";
+                        const isFrontDF= sel.mluPn === "503R20132" || sel.mluPn === "503R20164";
+                        const mluDesc  = P(sel.mluPn)?.desc ?? "";
+                        if (isEF) return (
+                          <div style={{padding:"12px 14px",background:"#FFFBEB",borderRadius:8,border:"1px solid #FCD34D"}}>
+                            <div style={{fontSize:12,fontWeight:700,color:"#92400E",marginBottom:6}}>
+                              ⚠ MLU-32EF — 2× 50-pin Telco Connectors (2 cables per card required)
                             </div>
-                          );
-                        }
-
-                        // Rear-access (DR / ER) MLUs — 128-pin DIN cables
-                        const autoCableQty = sel.mluQty;
+                            <AccRow pn="504R20252" label="Include 50-pin Champ Cables?" hint="2 cables per MLU-32EF card"
+                              checked={sel.mluCableInclude} onChange={v=>set("mluCableInclude",v)} />
+                            {sel.mluCableInclude && (
+                              <div style={{marginLeft:12,marginTop:8}}>
+                                <Label>Cable Color &amp; Length</Label>
+                                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6,marginBottom:8}}>
+                                  {(isNA ? [
+                                    {pn:"504R20252",label:"US · 25ft"},{pn:"504R20502",label:"US · 50ft"},
+                                    {pn:"504R21002",label:"US · 100ft"},{pn:"504R21502",label:"US · 150ft"},
+                                  ] : [
+                                    {pn:"504R20151",label:"EU · 4m"},{pn:"504R20251",label:"EU · 10m"},
+                                    {pn:"504R20501",label:"EU · 20m"},{pn:"504R21001",label:"EU · 50m"},
+                                  ]).map(c=>(
+                                    <button key={c.pn} onClick={()=>set("chs200CablePn",c.pn)}
+                                      style={{textAlign:"left",padding:"8px 10px",borderRadius:7,border:`2px solid ${sel.chs200CablePn===c.pn?A:"#E2E8F0"}`,background:sel.chs200CablePn===c.pn?"#FFF7F5":"white",cursor:"pointer"}}>
+                                      <div style={{fontSize:12,fontWeight:600,color:"#1A2035"}}>{c.label}</div>
+                                      <code style={{fontSize:10,color:"#94A3B8"}}>{c.pn}</code>
+                                    </button>
+                                  ))}
+                                </div>
+                                <Label>Qty (2 per card × {sel.mluQty} card{sel.mluQty>1?"s":""})</Label>
+                                <Counter v={sel.chs200CableQty||sel.mluQty*2} min={1} max={9999} set={v=>set("chs200CableQty",v)} />
+                                <div style={{fontSize:11,color:"#64748B",marginTop:3}}>MLU-32EF has 2 front 50-pin connectors — order 2 cables per card.</div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                        if (isFrontDF) return (
+                          <div style={{padding:"12px 14px",background:"#F0F9FF",borderRadius:8,border:"1px solid #BAE6FD"}}>
+                            <div style={{fontSize:12,fontWeight:700,color:"#0369A1",marginBottom:4}}>ℹ Front-Access (DF) MLU — 144-pin FCI Connector</div>
+                            <div style={{fontSize:11,color:"#0C4A6E",lineHeight:1.5}}>
+                              Front-access DF MLUs use a <strong>144-pin FCI connector</strong>.
+                              No cable P/N is established in the Actelis Parts List — source cables separately.
+                            </div>
+                          </div>
+                        );
+                        // Rear-access DR/ER — 128-pin DIN cables (US or EU)
                         return (
                           <>
                             <div style={{padding:"8px 12px",background:"#F0FDF4",borderRadius:7,border:"1px solid #BBF7D0",marginBottom:10,fontSize:11,color:"#166534",fontWeight:600}}>
-                              ✓ Rear-access ({mluDesc}) uses 128-pin DIN connector → {autoCableQty} × 64-pair DIN cable{autoCableQty>1?"s":""}
+                              ✓ Rear-access ({mluDesc}) — 128-pin DIN cables
                             </div>
-                            <AccRow pn="504R60062" label="Include MLU Copper Cables?" hint={`128-pin DIN — 1 cable per MLU card`}
+                            <AccRow pn="504R60062" label="Include MLU Copper Cables?" hint="128-pin DIN — 1 cable per MLU card"
                               checked={sel.mluCableInclude} onChange={v=>set("mluCableInclude",v)} />
                           </>
                         );
                       })()}
-                      {sel.mluCableInclude && !["503R20132","503R20164"].includes(sel.mluPn) && (
+                      {sel.mluCableInclude && !["503R20132","503R20164","503R20053"].includes(sel.mluPn) && (
                         <div style={{ marginLeft:12, padding:"12px 14px", background:"#F8FAFC", borderRadius:8, border:"1px solid #E2E8F0", marginTop:6 }}>
                           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12, marginBottom:12 }}>
                             <div>
-                              <Label>Cable Coloring Scheme</Label>
+                              <Label>Color Scheme</Label>
                               <div style={{ display:"flex", gap:6 }}>
                                 {["US","EU"].map(c => (
-                                  <button key={c} onClick={()=>set("mluCableColor",c)}
+                                  <button key={c} onClick={()=>{set("mluCableColor",c);set("mluCableDistance",c==="EU"?"10m":"25ft");}}
                                     style={{ flex:1, padding:"7px", borderRadius:6, border:`2px solid ${sel.mluCableColor===c?A:"#E2E8F0"}`, background:sel.mluCableColor===c?"#FFF7F5":"white", cursor:"pointer", fontWeight:700, fontSize:13, color:"#1A2035" }}>
-                                    {c} Color Code
+                                    {c}
                                   </button>
                                 ))}
                               </div>
                             </div>
                             <div>
-                              <Label>Max Distance to MDF</Label>
+                              <Label>Distance to MDF</Label>
                               <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
-                                {["25ft","100ft","150ft"].map(d => (
+                                {(sel.mluCableColor==="EU" ? ["10m","20m","50m"] : ["25ft","100ft","150ft"]).map(d => (
                                   <button key={d} onClick={()=>set("mluCableDistance",d)}
-                                    style={{ flex:1, padding:"7px", borderRadius:6, border:`2px solid ${sel.mluCableDistance===d?A:"#E2E8F0"}`, background:sel.mluCableDistance===d?"#FFF7F5":"white", cursor:"pointer", fontWeight:700, fontSize:13, color:"#1A2035" }}>
+                                    style={{ flex:1, padding:"6px", borderRadius:6, border:`2px solid ${sel.mluCableDistance===d?A:"#E2E8F0"}`, background:sel.mluCableDistance===d?"#FFF7F5":"white", cursor:"pointer", fontWeight:700, fontSize:12, color:"#1A2035" }}>
                                     {d}
                                   </button>
                                 ))}
                               </div>
                             </div>
                           </div>
-                          {/* Preview selected cable SKU */}
                           {(() => {
-                            const cableMap = {"US-25ft":"504R60060","US-100ft":"504R60062","US-150ft":"504R60063","EU-100ft":"504R60088","EU-25ft":"504R60060","EU-150ft":"504R60063"};
+                            // US STP 26AWG: 504R60060(25ft), 504R60062(100ft), 504R60063(150ft)
+                            // EU FUTP 0.5mm: 504R60084(10m), 504R60085(20m), 504R60086(50m)
+                            const cableMap = {
+                              "US-25ft":"504R60060","US-100ft":"504R60062","US-150ft":"504R60063",
+                              "EU-10m":"504R60084","EU-20m":"504R60085","EU-50m":"504R60086",
+                            };
                             const pn = cableMap[`${sel.mluCableColor}-${sel.mluCableDistance}`] || "504R60062";
                             const prod = P(pn);
                             const qty = sel.mluQty * (sel.nodeCount||1);
@@ -1153,7 +1263,7 @@ function NodeWizard({ region, custType, dealReg, replacements, onAddLines, onClo
                               <div style={{ padding:"8px 10px", background:"white", borderRadius:6, border:"1px solid #E2E8F0", fontSize:12 }}>
                                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
                                   <span style={{ color:"#1A2035", fontWeight:600 }}>{prod.desc}</span>
-                                  <span style={{ fontWeight:700, color:"#0B1D3A" }}>{$(prod.price)} × {qty}</span>
+                                  <span style={{ fontWeight:700, color:N }}>{$(prod.price)} × {qty}</span>
                                 </div>
                                 <code style={{ fontSize:10, color:"#94A3B8" }}>{pn}</code>
                               </div>
