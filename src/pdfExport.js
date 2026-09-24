@@ -282,7 +282,12 @@ export async function exportQuotePDF(quote) {
     const qty = parseInt(sv.qty          || 1);
     return s + (pct > 0 ? hwGrandTotal * pct * qty : lp * qty);
   }, 0);
-  const grandTotal = hwGrandTotal + svcTotal;
+
+  // Financial adjustments
+  const shippingAmt = quote.add_ship ? hwGrandTotal * 0.02 : 0;
+  const ccFeeAmt    = quote.add_cc   ? hwGrandTotal * 0.03 : 0;
+  const taxAmt      = quote.add_tax  ? hwGrandTotal * (parseFloat(quote.tax_rate || 0) / 100) : 0;
+  const grandTotal  = hwGrandTotal + svcTotal + shippingAmt + ccFeeAmt + taxAmt;
 
   const RX  = W - MR;
   const LX  = RX - 84;
@@ -301,10 +306,39 @@ export async function exportQuotePDF(quote) {
     doc.line(RX - vw, yPos + 0.9, RX, yPos + 0.9);
   }
 
+  function plainLine(label, value, yPos) {
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(8.5);
+    doc.setTextColor(...TEXT);
+    doc.text(label, LX, yPos);
+    doc.text(value, RX, yPos, { align:"right" });
+  }
+
   underlinedLine("Total Price Excluding Services/Warranty", fmt(hwGrandTotal), y);
   y += 7;
-  underlinedLine("Total Price Including Services/Warranty", fmt(grandTotal), y);
-  y += 9;
+  underlinedLine("Total Price Including Services/Warranty", fmt(hwGrandTotal + svcTotal), y);
+  y += 7;
+
+  // Show shipping, CC fee, tax as separate lines if active
+  if (shippingAmt > 0) {
+    plainLine("Shipping Cost (~2% of hardware total)", fmt(shippingAmt), y);
+    y += 5;
+  }
+  if (ccFeeAmt > 0) {
+    plainLine("Credit Card Fee (3% surcharge)", fmt(ccFeeAmt), y);
+    y += 5;
+  }
+  if (taxAmt > 0) {
+    plainLine(`Sales Tax (${parseFloat(quote.tax_rate || 0).toFixed(1)}%)`, fmt(taxAmt), y);
+    y += 5;
+  }
+  if (shippingAmt > 0 || ccFeeAmt > 0 || taxAmt > 0) {
+    y += 2;
+    underlinedLine("Grand Total (All Inclusive)", fmt(grandTotal), y);
+    y += 9;
+  } else {
+    y += 2;
+  }
 
   // ── ADDITIONAL INFORMATION ────────────────────────────────────────────────
   doc.setFont("helvetica","bold");
@@ -393,8 +427,17 @@ export async function exportQuotePDF(quote) {
 
     y = doc.lastAutoTable.finalY + 6;
 
-    // Final grand total underlined
-    underlinedLine("Total Price Including Services/Warranty", fmt(grandTotal), y);
+    // Final grand total — show breakdowns then all-inclusive total
+    if (shippingAmt > 0) { plainLine("Shipping Cost (~2% of hardware total)", fmt(shippingAmt), y); y += 5; }
+    if (ccFeeAmt    > 0) { plainLine("Credit Card Fee (3% surcharge)", fmt(ccFeeAmt), y); y += 5; }
+    if (taxAmt      > 0) { plainLine(`Sales Tax (${parseFloat(quote.tax_rate || 0).toFixed(1)}%)`, fmt(taxAmt), y); y += 5; }
+    if (shippingAmt > 0 || ccFeeAmt > 0 || taxAmt > 0) { y += 2; }
+    underlinedLine(
+      (shippingAmt > 0 || ccFeeAmt > 0 || taxAmt > 0)
+        ? "Grand Total (All Inclusive)"
+        : "Total Price Including Services/Warranty",
+      fmt(grandTotal), y
+    );
   }
 
   // ── SAVE ──────────────────────────────────────────────────────────────────

@@ -1,0 +1,2315 @@
+{
+  "version": "2026-04-08",
+  "updated": "2026-04-08",
+  "priceList": [
+    {
+      "pn": "501RG0140",
+      "desc": "GL830-8O",
+      "price": 5712,
+      "cat": "A1.1 GL800 Solutions"
+    },
+    {
+      "pn": "501RG0144",
+      "desc": "GL830-8R",
+      "price": 2921,
+      "cat": "A1.1 GL800 Solutions"
+    },
+    {
+      "pn": "501RG0139",
+      "desc": "GL830-16O",
+      "price": 3748,
+      "cat": "A1.1 GL800 Solutions"
+    },
+    {
+      "pn": "501RG0143",
+      "desc": "GL830-16R",
+      "price": 3330,
+      "cat": "A1.1 GL800 Solutions"
+    },
+    {
+      "pn": "501RG0134",
+      "desc": "GL850L-16O",
+      "price": 4251,
+      "cat": "A1.1 GL800 Solutions"
+    },
+    {
+      "pn": "501RG0135",
+      "desc": "GL850L-16R",
+      "price": 3917,
+      "cat": "A1.1 GL800 Solutions"
+    },
+    {
+      "pn": "506R61334",
+      "desc": "GL9110C",
+      "price": 1800,
+      "cat": "A1.2 GL9000 Headend Solutions"
+    },
+    {
+      "pn": "506R61342",
+      "desc": "GL9104C",
+      "price": 1550,
+      "cat": "A1.2 GL9000 Headend Solutions"
+    },
+    {
+      "pn": "506R61335",
+      "desc": "GL901CS",
+      "price": 162,
+      "cat": "A1.2 GL9000 Headend Solutions"
+    },
+    {
+      "pn": "506R61337",
+      "desc": "GL93C",
+      "price": 110,
+      "cat": "A1.3 GL9000 CPEs"
+    },
+    {
+      "pn": "506R61336",
+      "desc": "GL93C-W",
+      "price": 257,
+      "cat": "A1.3 GL9000 CPEs"
+    },
+    {
+      "pn": "501RG0302",
+      "desc": "GL916",
+      "price": 1950,
+      "cat": "A1.4 GL900 Headend Solutions"
+    },
+    {
+      "pn": "501RG0300",
+      "desc": "GL916-R",
+      "price": 2230,
+      "cat": "A1.4 GL900 Headend Solutions"
+    },
+    {
+      "pn": "501RG0303",
+      "desc": "GL908",
+      "price": 1380,
+      "cat": "A1.4 GL900 Headend Solutions"
+    },
+    {
+      "pn": "501RG0301",
+      "desc": "GL908-R",
+      "price": 1680,
+      "cat": "A1.4 GL900 Headend Solutions"
+    },
+    {
+      "pn": "501RG0167",
+      "desc": "GL904",
+      "price": 1120,
+      "cat": "A1.4 GL900 Headend Solutions"
+    },
+    {
+      "pn": "501RG0168",
+      "desc": "GL904-R",
+      "price": 1410,
+      "cat": "A1.4 GL900 Headend Solutions"
+    },
+    {
+      "pn": "506R61245",
+      "desc": "GL91",
+      "price": 110,
+      "cat": "A1.5 GL900 CPEs"
+    },
+    {
+      "pn": "501S61246",
+      "desc": "GL91T",
+      "price": 120,
+      "cat": "A1.5 GL900 CPEs"
+    },
+    {
+      "pn": "501S61247",
+      "desc": "GL91T-RB",
+      "price": 195,
+      "cat": "A1.5 GL900 CPEs"
+    },
+    {
+      "pn": "501RG0157",
+      "desc": "GL92",
+      "price": 117,
+      "cat": "A1.5 GL900 CPEs"
+    },
+    {
+      "pn": "501RG0158",
+      "desc": "GL92-R",
+      "price": 208,
+      "cat": "A1.5 GL900 CPEs"
+    },
+    {
+      "pn": "510KG0310",
+      "desc": "GL900E-OR-4",
+      "price": 1750,
+      "cat": "A1.6 GL900 Enclosures & Bundles"
+    },
+    {
+      "pn": "510KG0309",
+      "desc": "GL900E-OR-8",
+      "price": 2260,
+      "cat": "A1.6 GL900 Enclosures & Bundles"
+    },
+    {
+      "pn": "510KG0308",
+      "desc": "GL900E-OR-16",
+      "price": 2990,
+      "cat": "A1.6 GL900 Enclosures & Bundles"
+    },
+    {
+      "pn": "501RG0016",
+      "desc": "ML622",
+      "price": 1145,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0121",
+      "desc": "ML622i with 24/48Vdc",
+      "price": 800,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0046",
+      "desc": "ML624",
+      "price": 1720,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0122",
+      "desc": "ML624i with 24/48Vdc",
+      "price": 1260,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0067",
+      "desc": "ML638",
+      "price": 2306,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0218",
+      "desc": "ML6416E",
+      "price": 4595,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0216",
+      "desc": "ML644E",
+      "price": 2341,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0116",
+      "desc": "ML644EL",
+      "price": 3560,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0217",
+      "desc": "ML648E",
+      "price": 3031,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0078",
+      "desc": "ML650SV",
+      "price": 3308,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0076",
+      "desc": "ML654S",
+      "price": 3748,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0077",
+      "desc": "ML658S",
+      "price": 4430,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0477",
+      "desc": "ML658S Advanced CLK",
+      "price": 3330,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0106",
+      "desc": "ML684M",
+      "price": 1950,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0238",
+      "desc": "ML6916E (w/o SyncE)",
+      "price": 6090,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0115",
+      "desc": "ML6916EL",
+      "price": 6665,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0111",
+      "desc": "ML6916EN",
+      "price": 6554,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0254",
+      "desc": "ML6916ES",
+      "price": 6550,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0259",
+      "desc": "ML698E",
+      "price": 3679,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0253",
+      "desc": "ML698ES",
+      "price": 5055,
+      "cat": "A2. ML600 Family"
+    },
+    {
+      "pn": "501RG0240",
+      "desc": "ML622D",
+      "price": 1145,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG3240",
+      "desc": "ML622D (New)",
+      "price": 1374,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG0220",
+      "desc": "ML684D",
+      "price": 1950,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG3230",
+      "desc": "ML684D (New)",
+      "price": 1950,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG3255",
+      "desc": "ML684D-M (12/24V)",
+      "price": 1995,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG3355",
+      "desc": "ML684DL-M (12/24V)",
+      "price": 2795,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG3358",
+      "desc": "ML684DLP-M",
+      "price": 2989,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG0232",
+      "desc": "ML684DTP",
+      "price": 2295,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG0221",
+      "desc": "ML680DF",
+      "price": 1145,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG3231",
+      "desc": "ML680DF (New)",
+      "price": 953,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG0236",
+      "desc": "ML680DFTP",
+      "price": 1490,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG3275",
+      "desc": "ML680D-M (12/24V)",
+      "price": 1489,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG3375",
+      "desc": "ML680DL-M (12/24V)",
+      "price": 2019,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "501RG3378",
+      "desc": "ML680DLP-M",
+      "price": 1410,
+      "cat": "A2.1 ML600D Family"
+    },
+    {
+      "pn": "510KG6241",
+      "desc": "ML624 Kit",
+      "price": 2013,
+      "cat": "A2.2 ML600 Configurations"
+    },
+    {
+      "pn": "510KG6381",
+      "desc": "ML638 Kit",
+      "price": 2622,
+      "cat": "A2.2 ML600 Configurations"
+    },
+    {
+      "pn": "501S20394",
+      "desc": "ML638 Rackmount kit",
+      "price": 3163,
+      "cat": "A2.2 ML600 Configurations"
+    },
+    {
+      "pn": "510KG0065",
+      "desc": "ML6416E kit",
+      "price": 4825,
+      "cat": "A2.2 ML600 Configurations"
+    },
+    {
+      "pn": "510KG0064",
+      "desc": "ML648E kit",
+      "price": 3261,
+      "cat": "A2.2 ML600 Configurations"
+    },
+    {
+      "pn": "506R00013E",
+      "desc": "AC/DC power supply for GL800 (EU)",
+      "price": 138,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "506R00013",
+      "desc": "AC/DC power supply for GL800 (NA)",
+      "price": 138,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "506R00006D",
+      "desc": "AC-DC power supply for ML684D-M (NA)",
+      "price": 110,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "506R00008",
+      "desc": "AC-DC power supply for GL900/old ML620i (501RG016x) (US/EU)",
+      "price": 58,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "506R00006E",
+      "desc": "AC-DC power supply for ML600/ML740/ML530 (EU)",
+      "price": 110,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "506R00006",
+      "desc": "AC-DC power supply for ML600/ML740/ML530 (NA)",
+      "price": 110,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "506R00010",
+      "desc": "AC-DC power supply for new ML620i (501RG012x) (US/EU)",
+      "price": 58,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "506R61185",
+      "desc": "DIN Rail 110-220VAC-24VDC PSU for ML600Dx/ML500Dx/GL5xxx + US Cables",
+      "price": 184,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "506R61181",
+      "desc": "DIN Rail 110-220VAC-24VDC PSU for ML600Dx/ML500Dx/GL5xxx without PoE",
+      "price": 156,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "506R61191",
+      "desc": "DIN Rail 110-220VAC-48VDC PSU for ML600Dx/ML500Dx/GL5xxx/GL7000 with PoE",
+      "price": 225,
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700"
+    },
+    {
+      "pn": "510K00060",
+      "desc": "Accessories Kit for ML600/ML700/ML530",
+      "price": 23,
+      "cat": "A3.2 GL800/GL900ML500/ML600/ML700 Related Items"
+    },
+    {
+      "pn": "506R32110",
+      "desc": "IP65 Enclosure for ML650S/SV, -48VDC Fiber & T1 Enclosure.",
+      "price": 2178,
+      "cat": "A3.2 GL800/GL900ML500/ML600/ML700 Related Items"
+    },
+    {
+      "pn": "502R05080",
+      "desc": "ML600/ML740/ML530/GL800/GL900 Sleeve Extension Slide Kit Installation",
+      "price": 195,
+      "cat": "A3.2 GL800/GL900ML500/ML600/ML700 Related Items"
+    },
+    {
+      "pn": "510R21070",
+      "desc": "Rack Mount Sleeve Kit for two ML600/700/530/GL800 units",
+      "price": 225,
+      "cat": "A3.2 GL800/GL900ML500/ML600/ML700 Related Items"
+    },
+    {
+      "pn": "510R21080",
+      "desc": "Wall Mount Kit for ML530/ML600/ML700/GL800/GL900",
+      "price": 52,
+      "cat": "A3.2 GL800/GL900ML500/ML600/ML700 Related Items"
+    },
+    {
+      "pn": "510R50955",
+      "desc": "Wall Mount Kit for ML530/ML600/ML700/GL800/GL900, Flat faced",
+      "price": 98,
+      "cat": "A3.2 GL800/GL900ML500/ML600/ML700 Related Items"
+    },
+    {
+      "pn": "502R20230",
+      "desc": "Chassis 200 Shelf",
+      "price": 1127,
+      "cat": "A4.1 Shelves"
+    },
+    {
+      "pn": "502R02110",
+      "desc": "Chassis 2000B Shelf, 19 inch (CHS-2000B/19)",
+      "price": 2985,
+      "cat": "A4.1 Shelves"
+    },
+    {
+      "pn": "503R60042",
+      "desc": "Service Dispatcher Unit (SDU-450)",
+      "price": 10345,
+      "cat": "A4.2 SDU (Service Dispatch Units)"
+    },
+    {
+      "pn": "503R60043",
+      "desc": "Service Dispatcher Unit (SDU-450G)",
+      "price": 11495,
+      "cat": "A4.2 SDU (Service Dispatch Units)"
+    },
+    {
+      "pn": "503R60041",
+      "desc": "Service Dispatcher Unit (SDU-455G)",
+      "price": 12645,
+      "cat": "A4.2 SDU (Service Dispatch Units)"
+    },
+    {
+      "pn": "503R20132",
+      "desc": "MLU-32DF (Front Access Multi-Line Unit with 32 copper pairs, DRB Enabled)",
+      "price": 6325,
+      "cat": "A4.3 MLU (Multiport Line Units)"
+    },
+    {
+      "pn": "503R20232",
+      "desc": "MLU-32DR (Rear Access Multi-Line Unit with 32 copper pairs, DRB Enabled)",
+      "price": 6325,
+      "cat": "A4.3 MLU (Multiport Line Units)"
+    },
+    {
+      "pn": "503R20164",
+      "desc": "MLU-64DF (Front Access Multi-Line Unit with 64 copper pairs, DRB Enabled)",
+      "price": 9195,
+      "cat": "A4.3 MLU (Multiport Line Units)"
+    },
+    {
+      "pn": "503R20264",
+      "desc": "MLU-64DR (Rear Access Multi-Line Unit with 64 copper pairs, DRB Enabled)",
+      "price": 9195,
+      "cat": "A4.3 MLU (Multiport Line Units)"
+    },
+    {
+      "pn": "506R20230",
+      "desc": "AC Power Feed Module (AC-PFM) for CHS-200",
+      "price": 403,
+      "cat": "A4.4 CHS-200 Related Items"
+    },
+    {
+      "pn": "510K20230",
+      "desc": "Accessories Kit for CHS-200",
+      "price": 115,
+      "cat": "A4.4 CHS-200 Related Items"
+    },
+    {
+      "pn": "506R30060",
+      "desc": "Fan Control Module for CHS-200 (FCM-200)",
+      "price": 633,
+      "cat": "A4.4 CHS-200 Related Items"
+    },
+    {
+      "pn": "510R10955",
+      "desc": "Wall Mount Kit for CHS-200, Flat faced",
+      "price": 52,
+      "cat": "A4.4 CHS-200 Related Items"
+    },
+    {
+      "pn": "506R61311",
+      "desc": "-48V / 600W Rectifier for ML2300",
+      "price": 711,
+      "cat": "A4.5 CHS-2000 Related Items"
+    },
+    {
+      "pn": "508R00680",
+      "desc": "Blank Panel Kit (4 blank panels)",
+      "price": 46,
+      "cat": "A4.5 CHS-2000 Related Items"
+    },
+    {
+      "pn": "506R30070",
+      "desc": "Fan Control Module for CHS-2000B/19(FCM-2000B/19)",
+      "price": 685,
+      "cat": "A4.5 CHS-2000 Related Items"
+    },
+    {
+      "pn": "550A00047",
+      "desc": "Flash Card for SDU-440/G",
+      "price": 173,
+      "cat": "A4.5 CHS-2000 Related Items"
+    },
+    {
+      "pn": "550A00046",
+      "desc": "Flash Card for SDU-450/G",
+      "price": 173,
+      "cat": "A4.5 CHS-2000 Related Items"
+    },
+    {
+      "pn": "502F60187A",
+      "desc": "Metal 19” Shelf for rectifier installations for ML2300 rectifier",
+      "price": 110,
+      "cat": "A4.5 CHS-2000 Related Items"
+    },
+    {
+      "pn": "504R60105",
+      "desc": "Rectifier Cable 110/220V to open-ended for ML2300 rectifier",
+      "price": 89,
+      "cat": "A4.5 CHS-2000 Related Items"
+    },
+    {
+      "pn": "503R20270",
+      "desc": "Streaker card for ML2300 and ML230",
+      "price": 2300,
+      "cat": "A4.5 CHS-2000 Related Items"
+    },
+    {
+      "pn": "510K20270",
+      "desc": "Streaker card with probe for ML2300 and ML230",
+      "price": 2530,
+      "cat": "A4.5 CHS-2000 Related Items"
+    },
+    {
+      "pn": "501S20442",
+      "desc": "ML230 Bundle: CHS-200/19\" + SDU-450 + MLU-32DF",
+      "price": 17797,
+      "cat": "A4.6 ML230 Configuration Examples"
+    },
+    {
+      "pn": "501S20443",
+      "desc": "ML230 Bundle: CHS-200/19\" + SDU-450 + MLU-32DR",
+      "price": 17797,
+      "cat": "A4.6 ML230 Configuration Examples"
+    },
+    {
+      "pn": "501S20441",
+      "desc": "ML230 Bundle: CHS-200/19\" + SDU-450 + MLU-64DF",
+      "price": 20666,
+      "cat": "A4.6 ML230 Configuration Examples"
+    },
+    {
+      "pn": "501S20436",
+      "desc": "ML230 Bundle: CHS-200/19\" + SDU-450 + MLU-64DR",
+      "price": 20666,
+      "cat": "A4.6 ML230 Configuration Examples"
+    },
+    {
+      "pn": "501S20445",
+      "desc": "ML230 Bundle: CHS-200/19\" + SDU-450G + MLU-32DF",
+      "price": 18947,
+      "cat": "A4.6 ML230 Configuration Examples"
+    },
+    {
+      "pn": "501S20446",
+      "desc": "ML230 Bundle: CHS-200/19\" + SDU-450G + MLU-32DR",
+      "price": 18947,
+      "cat": "A4.6 ML230 Configuration Examples"
+    },
+    {
+      "pn": "501S20444",
+      "desc": "ML230 Bundle: CHS-200/19\" + SDU-450G + MLU-64DF",
+      "price": 21816,
+      "cat": "A4.6 ML230 Configuration Examples"
+    },
+    {
+      "pn": "501S20456",
+      "desc": "ML230 Bundle: CHS-200/19\" + SDU-450G + MLU-64DR",
+      "price": 21816,
+      "cat": "A4.6 ML230 Configuration Examples"
+    },
+    {
+      "pn": "501S20448",
+      "desc": "ML2300 Bundle: CHS-2000B/19\" + SDU-450 + MLU-32DF",
+      "price": 19654,
+      "cat": "A4.7 ML2300 Configuration Examples"
+    },
+    {
+      "pn": "501S20449",
+      "desc": "ML2300 Bundle: CHS-2000B/19\" + SDU-450 + MLU-32DR",
+      "price": 19654,
+      "cat": "A4.7 ML2300 Configuration Examples"
+    },
+    {
+      "pn": "501S20447",
+      "desc": "ML2300 Bundle: CHS-2000B/19\" + SDU-450 + MLU-64DF",
+      "price": 22523,
+      "cat": "A4.7 ML2300 Configuration Examples"
+    },
+    {
+      "pn": "501S20435",
+      "desc": "ML2300 Bundle: CHS-2000B/19\" + SDU-450 + MLU-64DR",
+      "price": 22523,
+      "cat": "A4.7 ML2300 Configuration Examples"
+    },
+    {
+      "pn": "501S20451",
+      "desc": "ML2300 Bundle: CHS-2000B/19\" + SDU-450G + MLU-32DF",
+      "price": 20804,
+      "cat": "A4.7 ML2300 Configuration Examples"
+    },
+    {
+      "pn": "501S20452",
+      "desc": "ML2300 Bundle: CHS-2000B/19\" + SDU-450G + MLU-32DR",
+      "price": 20804,
+      "cat": "A4.7 ML2300 Configuration Examples"
+    },
+    {
+      "pn": "501S20450",
+      "desc": "ML2300 Bundle: CHS-2000B/19\" + SDU-450G + MLU-64DF",
+      "price": 23673,
+      "cat": "A4.7 ML2300 Configuration Examples"
+    },
+    {
+      "pn": "501S20455",
+      "desc": "ML2300 Bundle: CHS-2000B/19\" + SDU-450G + MLU-64DR",
+      "price": 23673,
+      "cat": "A4.7 ML2300 Configuration Examples"
+    },
+    {
+      "pn": "506R61254",
+      "desc": "GL5010-10J2F",
+      "price": 1185,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61252",
+      "desc": "GL5010-8J2F",
+      "price": 1010,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R62107",
+      "desc": "GL5010-8J2F-P",
+      "price": 1190,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61253",
+      "desc": "GL5010-8J4F",
+      "price": 1222,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61255",
+      "desc": "GL5020-8J4F-P",
+      "price": 1580,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61256",
+      "desc": "GL5020X-8J4F-P",
+      "price": 2519,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61257",
+      "desc": "GL5030X-8J4F",
+      "price": 1780,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61258",
+      "desc": "GL5030X-8J4F-P",
+      "price": 1940,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61261",
+      "desc": "GL5030X-8J4F-P1",
+      "price": 2359,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61262",
+      "desc": "GL5030X-8J4F-P2",
+      "price": 2260,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61309",
+      "desc": "GL5060-16J4F-P",
+      "price": 2593,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61264",
+      "desc": "GL5060X-16J4F",
+      "price": 2296,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61265",
+      "desc": "GL5060X-16J4F-P",
+      "price": 2750,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61263",
+      "desc": "GL5070X-8J12F (ML570D - Old P/N 506R62030)",
+      "price": 2140,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R62108",
+      "desc": "GL5080X-4J12F",
+      "price": 4576,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R62011",
+      "desc": "ML5114D",
+      "price": 1470,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R62012",
+      "desc": "ML5114DP",
+      "price": 1499,
+      "cat": "A5.1 Fiber DIN Rail L2 Switches"
+    },
+    {
+      "pn": "506R61296",
+      "desc": "GL5010R-8J2F",
+      "price": 1640,
+      "cat": "A5.2 Fiber DIN Rail L3 Switches"
+    },
+    {
+      "pn": "506R62106",
+      "desc": "GL5020R-8J4F-P",
+      "price": 2659,
+      "cat": "A5.2 Fiber DIN Rail L3 Switches"
+    },
+    {
+      "pn": "506R61259",
+      "desc": "GL5030XR-8J4F",
+      "price": 2550,
+      "cat": "A5.2 Fiber DIN Rail L3 Switches"
+    },
+    {
+      "pn": "506R61260",
+      "desc": "GL5030XR-8J4F-P",
+      "price": 3113,
+      "cat": "A5.2 Fiber DIN Rail L3 Switches"
+    },
+    {
+      "pn": "506R61306",
+      "desc": "GL5030XR-8J4F-P1",
+      "price": 3230,
+      "cat": "A5.2 Fiber DIN Rail L3 Switches"
+    },
+    {
+      "pn": "506R61267",
+      "desc": "GL5060XR-16J4F",
+      "price": 3111,
+      "cat": "A5.2 Fiber DIN Rail L3 Switches"
+    },
+    {
+      "pn": "506R61268",
+      "desc": "GL5060XR-16J4F-P",
+      "price": 3520,
+      "cat": "A5.2 Fiber DIN Rail L3 Switches"
+    },
+    {
+      "pn": "506R61295",
+      "desc": "GL5070XR-8J12F",
+      "price": 3150,
+      "cat": "A5.2 Fiber DIN Rail L3 Switches"
+    },
+    {
+      "pn": "506R61270",
+      "desc": "GL5080XR-4J12F",
+      "price": 5050,
+      "cat": "A5.2 Fiber DIN Rail L3 Switches"
+    },
+    {
+      "pn": "506R61286",
+      "desc": "GL6010X-24J4F-DC",
+      "price": 2750,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61287",
+      "desc": "GL6010X-24J4F-AC",
+      "price": 2950,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61271",
+      "desc": "GL6010X-24J4F-P-DC",
+      "price": 3520,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61272",
+      "desc": "GL6010X-24J4F-P-AC",
+      "price": 3720,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61277",
+      "desc": "GL6020-16J12FC-DC",
+      "price": 3789,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61278",
+      "desc": "GL6020-16J12FC-AC",
+      "price": 4009,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61283",
+      "desc": "GL6030-24J4F-P-DC",
+      "price": 3190,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61284",
+      "desc": "GL6030-24J4F-P-AC",
+      "price": 3330,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61280",
+      "desc": "GL6031-16J12FC-DC",
+      "price": 2630,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61281",
+      "desc": "GL6031-16J12FC-AC",
+      "price": 2950,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61289",
+      "desc": "GL6040X-8J28F-DC (GL2140X-0828-DC - Old P/N 506R62100)",
+      "price": 3999,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61290",
+      "desc": "GL6040X-8J28F-AC",
+      "price": 4320,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "501RG0530",
+      "desc": "ML530",
+      "price": 920,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "501RG0252",
+      "desc": "ML540E",
+      "price": 2295,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R62016",
+      "desc": "ML540M DC",
+      "price": 1460,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R62006",
+      "desc": "ML540M AC",
+      "price": 1680,
+      "cat": "A5.3 Fiber Rackmount L2 Switches"
+    },
+    {
+      "pn": "506R61274",
+      "desc": "GL6010XR-24J4F-P-DC",
+      "price": 4520,
+      "cat": "A5.4 Fiber Rackmount L3 Switches"
+    },
+    {
+      "pn": "506R61275",
+      "desc": "GL6010XR-24J4F-P-AC",
+      "price": 4850,
+      "cat": "A5.4 Fiber Rackmount L3 Switches"
+    },
+    {
+      "pn": "506R61292",
+      "desc": "GL6040XR-8J28F-DC",
+      "price": 4810,
+      "cat": "A5.4 Fiber Rackmount L3 Switches"
+    },
+    {
+      "pn": "506R61293",
+      "desc": "GL6040XR-8J28F-AC",
+      "price": 5130,
+      "cat": "A5.4 Fiber Rackmount L3 Switches"
+    },
+    {
+      "pn": "506R61332",
+      "desc": "GL7006-4J2F-P",
+      "price": 2800,
+      "cat": "A5.5 Fiber In-Pole L2 Switches"
+    },
+    {
+      "pn": "506R61329",
+      "desc": "GL7010-6J4F-P",
+      "price": 3050,
+      "cat": "A5.5 Fiber In-Pole L2 Switches"
+    },
+    {
+      "pn": "506R61330",
+      "desc": "GL7020-6J4F-P",
+      "price": 3328,
+      "cat": "A5.5 Fiber In-Pole L2 Switches"
+    },
+    {
+      "pn": "506R61331",
+      "desc": "GL7030-6J4F-P",
+      "price": 3790,
+      "cat": "A5.5 Fiber In-Pole L2 Switches"
+    },
+    {
+      "pn": "501S20496",
+      "desc": "IP65 enclosure with 1 XR239SE repeater",
+      "price": 1434,
+      "cat": "A6. Repeater Related Products"
+    },
+    {
+      "pn": "501S20502",
+      "desc": "IP65 enclosure with wall clip and 1 XR239SE repeater",
+      "price": 1515,
+      "cat": "A6. Repeater Related Products"
+    },
+    {
+      "pn": "501S20494",
+      "desc": "IP68 dome enclosure with 1 XR239SE repeater",
+      "price": 953,
+      "cat": "A6. Repeater Related Products"
+    },
+    {
+      "pn": "501S20495",
+      "desc": "IP68 dome enclosure with 2 XR239SE repeaters",
+      "price": 1772,
+      "cat": "A6. Repeater Related Products"
+    },
+    {
+      "pn": "510K20099",
+      "desc": "Kit for PFU-8 Rev D to ML600",
+      "price": 1435,
+      "cat": "A6. Repeater Related Products"
+    },
+    {
+      "pn": "510K14597",
+      "desc": "Kit for XR239SE- AD14 - XConnect - Customer side fed (MAEC Enclosure)",
+      "price": 1375,
+      "cat": "A6. Repeater Related Products"
+    },
+    {
+      "pn": "501RG2099",
+      "desc": "PFU-8 Rev D",
+      "price": 1333,
+      "cat": "A6. Repeater Related Products"
+    },
+    {
+      "pn": "510K14497",
+      "desc": "XR239SE Kit - Straight Rewiring (CO side fed)",
+      "price": 1375,
+      "cat": "A6. Repeater Related Products"
+    },
+    {
+      "pn": "501RG2097",
+      "desc": "XR239SE Repeater - No Rewiring",
+      "price": 1260,
+      "cat": "A6. Repeater Related Products"
+    },
+    {
+      "pn": "503RG3110",
+      "desc": "ABA 3.0",
+      "price": 805,
+      "cat": "A8.1 BBA Cards"
+    },
+    {
+      "pn": "503RG3111",
+      "desc": "ABA 3.0E",
+      "price": 851,
+      "cat": "A8.1 BBA Cards"
+    },
+    {
+      "pn": "503RG3088",
+      "desc": "ABA LP ER 2.0",
+      "price": 863,
+      "cat": "A8.1 BBA Cards"
+    },
+    {
+      "pn": "503RG3104",
+      "desc": "VBA 3.0",
+      "price": 920,
+      "cat": "A8.1 BBA Cards"
+    },
+    {
+      "pn": "503RG3107",
+      "desc": "VBA 3.0E",
+      "price": 966,
+      "cat": "A8.1 BBA Cards"
+    },
+    {
+      "pn": "501S20475",
+      "desc": "Bundle E4-EH and 4x VBA 3.0E",
+      "price": 4283,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "501S20484",
+      "desc": "Bundle E4-EL and 4x ABA 3.0",
+      "price": 3105,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "501S20485",
+      "desc": "Bundle E4-EL and 4x ABA 3.0E",
+      "price": 3289,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "501S20483",
+      "desc": "Bundle E4-EL and 4x VBA 3.0",
+      "price": 3910,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "501S20482",
+      "desc": "Bundle E4-EL and 4x VBA 3.0E",
+      "price": 4030,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "510K31220",
+      "desc": "E2-EL - 2 Slot/4 port BBA Enclosure with Express power",
+      "price": 403,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "510K31037",
+      "desc": "Single slot StreamLine enclosure and ABA 2.0ER (SLE-AR)",
+      "price": 1288,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "510K31032",
+      "desc": "Single slot StreamLine enclosure and ABA 3.0 (SLE-A)",
+      "price": 1231,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "510K31033",
+      "desc": "Single slot StreamLine enclosure and ABA 3.0E (SLE-AE)",
+      "price": 1277,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "510K31034",
+      "desc": "Single slot StreamLine enclosure and VBA 3.0 (SLE-V)",
+      "price": 1346,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "510K31035",
+      "desc": "Single slot StreamLine enclosure and VBA 3.0E (SLE-VE)",
+      "price": 1392,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "510K31036",
+      "desc": "Single slot StreamLine enclosure and VBA 3.0E with Express power cascaded (SLE-VE-C)",
+      "price": 1507,
+      "cat": "A8.2 BBA Enclosures"
+    },
+    {
+      "pn": "503RG4080",
+      "desc": "BBA Flash Tool",
+      "price": 276,
+      "cat": "A8.3 BBA Accessories"
+    },
+    {
+      "pn": "506R0116R",
+      "desc": "ML632R",
+      "price": 1299,
+      "cat": "A9. L3 CPEs"
+    },
+    {
+      "pn": "506R0146R",
+      "desc": "ML634R",
+      "price": 2297,
+      "cat": "A9. L3 CPEs"
+    },
+    {
+      "pn": "EMSL40001",
+      "desc": "MetaASSIST EMS perpetual Site license for  up to 100 devices",
+      "price": 10000,
+      "cat": "B2.1 MetaASSIST EMS Site Licenses"
+    },
+    {
+      "pn": "EMSL40002",
+      "desc": "MetaASSIST EMS perpetual Site license for  up to 500 devices",
+      "price": 30000,
+      "cat": "B2.1 MetaASSIST EMS Site Licenses"
+    },
+    {
+      "pn": "EMSL40003",
+      "desc": "MetaASSIST EMS perpetual Site license for  up to 1000 devices",
+      "price": 50000,
+      "cat": "B2.1 MetaASSIST EMS Site Licenses"
+    },
+    {
+      "pn": "EMSL40004",
+      "desc": "MetaASSIST EMS perpetual Site license for more than 1000 devices",
+      "price": 99000,
+      "cat": "B2.1 MetaASSIST EMS Site Licenses"
+    },
+    {
+      "pn": "EMSL00105",
+      "desc": "EMS 3.X Node License for PTP Configuration",
+      "price": 87,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL00106",
+      "desc": "EMS 3.X Node License for ML1300/ML2300 PTMP",
+      "price": 1093,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL00107",
+      "desc": "EMS 3.X Node License for ML130/ML230/ML698(E) PTMP",
+      "price": 403,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40100",
+      "desc": "EMS annual Node license for ML600/ML500/ML700/GL5000/GL7000 - bundle of 10",
+      "price": 750,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40101",
+      "desc": "EMS annual Node license for ML600/ML500/ML700/GL5000/GL7000 - bundle of 50",
+      "price": 3500,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40102",
+      "desc": "EMS annual Node license for ML600/ML500/ML700/GL5000/GL7000 - bundle of 100",
+      "price": 6000,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40103",
+      "desc": "EMS annual Node license for ML600/ML500/ML700/GL5000/GL7000 - bundle of 500",
+      "price": 25000,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40104",
+      "desc": "EMS annual Node license for ML600/ML500/ML700/GL5000/GL7000 - bundle of 1000",
+      "price": 35000,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40105",
+      "desc": "EMS annual Node license for ML600/ML500/ML700/GL5000/GL7000 - bundle of 5000",
+      "price": 120000,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL00144",
+      "desc": "EMS Right-to-Use",
+      "price": 5000,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40107",
+      "desc": "EMS annual Node license for ML2300/ML230/ML69x/GL800/GL6000 - bundle of 5",
+      "price": 950,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40108",
+      "desc": "EMS annual Node license for ML2300/ML230/ML69x/GL800/GL6000 - bundle of 10",
+      "price": 1800,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40109",
+      "desc": "EMS annual Node license for ML2300/ML230/ML69x/GL800/GL6000 - bundle of 50",
+      "price": 8250,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL40110",
+      "desc": "EMS annual Node license for ML2300/ML230/ML69x/GL800/GL6000 - bundle of 100",
+      "price": 14500,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL00113",
+      "desc": "EMS Annual SNMP NE Licenses - up to 10 Devices",
+      "price": 200,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL00114",
+      "desc": "EMS Annual SNMP NE Licenses - up to 50 Devices",
+      "price": 1000,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL00115",
+      "desc": "EMS Annual SNMP NE Licenses - up to 100 Devices",
+      "price": 1800,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL00116",
+      "desc": "EMS Annual SNMP NE Licenses - up to 500 Devices",
+      "price": 9000,
+      "cat": "B2.2 MetaASSIST EMS NE License Keys"
+    },
+    {
+      "pn": "EMSL00110",
+      "desc": "EMS perpetual Redundancy License per 100 NEs",
+      "price": 4000,
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses"
+    },
+    {
+      "pn": "EMSL40111",
+      "desc": "EMS perpetual PM and statistics license per 100 NEs",
+      "price": 6000,
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses"
+    },
+    {
+      "pn": "EMSL40112",
+      "desc": "EMS perpetual Topology View license per 100 NEs",
+      "price": 4000,
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses"
+    },
+    {
+      "pn": "EMSL00109",
+      "desc": "EMS perpetual SNMP NB Interface License",
+      "price": 25000,
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses"
+    },
+    {
+      "pn": "EMSL00111",
+      "desc": "EMS perpetual TL1 NB Interface License",
+      "price": 15000,
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses"
+    },
+    {
+      "pn": "EMSL40118",
+      "desc": "EMS perpetual REST NB Interface License for alarms",
+      "price": 15000,
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses"
+    },
+    {
+      "pn": "EMSL00142",
+      "desc": "Perpetual license for EMS alarm email notifications",
+      "price": 7000,
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses"
+    },
+    {
+      "pn": "EMSL00143",
+      "desc": "Perpetual license for EMS security package",
+      "price": 20000,
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses"
+    },
+    {
+      "pn": "EMSL40119",
+      "desc": "Bundle of 5 additional EMS clients",
+      "price": 10000,
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses"
+    },
+    {
+      "pn": "506R00022",
+      "desc": "100Base-FX MMF SFP module (2km)",
+      "price": 115,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61186",
+      "desc": "100Base-FX SMF SFP module (10km) - hardened",
+      "price": 114,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R00032",
+      "desc": "100Base-FX SMF SFP module (15km)",
+      "price": 68,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61213",
+      "desc": "100/1000Base-T SFP",
+      "price": 103,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R00012",
+      "desc": "1000Base-SX MMF SFP module (500m)",
+      "price": 68,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R00002",
+      "desc": "1000Base-LX SMF SFP module (10km)",
+      "price": 68,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61187",
+      "desc": "1000Base-LX SMF SFP module (10km) - hardened",
+      "price": 114,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R51750",
+      "desc": "1000Base-LX SMF SFP module (40Km)",
+      "price": 287,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61188",
+      "desc": "1000Base-LX SMF SFP module (40Km) - hardened",
+      "price": 344,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R00042",
+      "desc": "1000Base-T SFP module",
+      "price": 103,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61155",
+      "desc": "2500Base-FX MMF SFP Module (500m)",
+      "price": 127,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61154",
+      "desc": "2500Base-FX SMF SFP module (30Km)",
+      "price": 289,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61235",
+      "desc": "10G BASE-LR SFP+ Module (10Km)",
+      "price": 147,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61241",
+      "desc": "10G BASE-LR SFP+ Module (40Km)",
+      "price": 294.4,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61242",
+      "desc": "10G BASE-LR SFP+ Module (70Km)",
+      "price": 885,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61164",
+      "desc": "BiDi MM SFP Transceiver for FE port, 2Km, TX=1310nm/RX=1550nm",
+      "price": 87,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61165",
+      "desc": "BiDi MM SFP Transceiver for FE port, 2Km, TX=1550nm/RX=1310nm",
+      "price": 87,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61158",
+      "desc": "BiDi SM SFP Transceiver for FE port, 20Km, TX=1310nm/RX=1550nm",
+      "price": 87,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61159",
+      "desc": "BiDi SM SFP Transceiver for FE port, 20Km, TX=1550nm/RX=1310nm",
+      "price": 87,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61162",
+      "desc": "BiDi SM SFP Transceiver for GE port, 3Km, TX=1310nm/RX=1550nm",
+      "price": 87,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61163",
+      "desc": "BiDi SM SFP Transceiver for GE port, 3Km, TX=1550nm/RX=1310nm",
+      "price": 87,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61171",
+      "desc": "BiDi SM CWDM SFP Transceiver for GE port, 20Km, TX=1310nm/RX=1490nm",
+      "price": 87,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61172",
+      "desc": "BiDi SM CWDM SFP Transceiver for GE port, 20Km, TX=1490nm/RX=1310nm",
+      "price": 190,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61169",
+      "desc": "BiDi SM CWDM SFP Transceiver for GE port, 40Km, TX=1310nm/RX=1490nm",
+      "price": 225,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61170",
+      "desc": "BiDi SM CWDM SFP Transceiver for GE port, 40Km, TX=1490nm/RX=1310nm",
+      "price": 225,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R51711",
+      "desc": "CSFP Transceiver 1610nm, GbE, 80km",
+      "price": 482,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61205",
+      "desc": "CSFP Transceiver, 1470nm GbE, 80km",
+      "price": 482,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61206",
+      "desc": "CSFP Transceiver, 1490nm GbE, 80km",
+      "price": 482,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R51716",
+      "desc": "CSFP Transceiver, 1510nm GbE, 80km",
+      "price": 482,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R51715",
+      "desc": "CSFP Transceiver, 1530nm GbE, 80km",
+      "price": 482,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R51712",
+      "desc": "CSFP Transceiver, 1550nm GbE, 80km",
+      "price": 482,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R51713",
+      "desc": "CSFP Transceiver, 1570nm GbE, 80km",
+      "price": 482,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61207",
+      "desc": "CSFP Transceiver, 1590nm GbE, 80km",
+      "price": 482,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R61151",
+      "desc": "T3/E3 over Ethernet SFP - 100Base-FX",
+      "price": 1605,
+      "cat": "C1. SFP Transceivers"
+    },
+    {
+      "pn": "506R04820",
+      "desc": "Newmar -48VDC Unity Fuse Panel",
+      "price": 228,
+      "cat": "C3. Power Supply"
+    },
+    {
+      "pn": "506R04815",
+      "desc": "Newmar -48VDC Unity rectifier",
+      "price": 363,
+      "cat": "C3. Power Supply"
+    },
+    {
+      "pn": "502R04810",
+      "desc": "Newmar -48VDC Unity rectifier shelf",
+      "price": 326,
+      "cat": "C3. Power Supply"
+    },
+    {
+      "pn": "506R04830",
+      "desc": "Newmar Battery Module",
+      "price": 367,
+      "cat": "C3. Power Supply"
+    },
+    {
+      "pn": "502R04825",
+      "desc": "Newmar Battery module shelf",
+      "price": 245,
+      "cat": "C3. Power Supply"
+    },
+    {
+      "pn": "504R60060",
+      "desc": "Copper Loop 64-pairs DIN Connector, US Color code,  25ft.",
+      "price": 237,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60062",
+      "desc": "Copper Loop 64-pairs DIN Connector, US Color code, 100ft.",
+      "price": 657,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60063",
+      "desc": "Copper Loop 64-pairs DIN Connector, US Color code, 150ft.",
+      "price": 733,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60088",
+      "desc": "Copper Loop 64-pairs FCI Connector, US Color code, 100ft.",
+      "price": 449,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60101",
+      "desc": "DSL dual port cable 2 X RJ45 to open end solid",
+      "price": 46,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R20160",
+      "desc": "DSL Octal Cable, 8xRJ-45 to open end, solid wires, 100ft/30m",
+      "price": 230,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R20120",
+      "desc": "DSL Octal Cable, 8xRJ-45 to open end, solid wires, 10ft/3m",
+      "price": 69,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R20180",
+      "desc": "DSL Octal cable, 8xRJ-45 to open end, solid wires, 150ft/50m",
+      "price": 317,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60100",
+      "desc": "DSL Octal Dual Port Cable, 8xRJ-45, open end,US solid wire,100ft /30 meter",
+      "price": 253,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60098",
+      "desc": "DSL Octal Dual Port Cable, 8xRJ-45, open end,US solid wire,10ft /3 meter",
+      "price": 92,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60150",
+      "desc": "DSL Octal Dual Port Cable, 8xRJ-45, open end,US solid wire,150ft / 45 meter",
+      "price": 486,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R20140",
+      "desc": "DSL Quad Cable, 4xRJ-45 to open end, solid wires, 100ft/30m",
+      "price": 173,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R20110",
+      "desc": "DSL Quad Cable, 4xRJ-45 to open end, solid wires, 10ft/3m",
+      "price": 46,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R06012",
+      "desc": "ML600-PFU MLP cable (8xRJ45->DB25) 0.3m",
+      "price": 72,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R06017",
+      "desc": "ML600-PFU MLP cable (8xRJ45->DB25) 3m",
+      "price": 92,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60099",
+      "desc": "ML6x16-PFU MLP Cable (8xRJ45->2xDB25), 3m",
+      "price": 115,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R24014",
+      "desc": "PFU-8 to MDF Cable (DB-25 to 8-pairs Open End),  25ft.",
+      "price": 52,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R24015",
+      "desc": "PFU-8 to MDF Cable (DB-25 to 8-pairs Open End),  50ft.",
+      "price": 80,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R24016",
+      "desc": "PFU-8 to MDF Cable (DB-25 to 8-pairs Open End), 100ft.",
+      "price": 104,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R24017",
+      "desc": "PFU-8 to MDF Cable (DB-25 to 8-pairs Open End), 150ft.",
+      "price": 115,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R24001",
+      "desc": "Y-Cable: Champ-64 Plug to 2 X Champ-50 connectors",
+      "price": 80,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60064",
+      "desc": "Y-Cable: DIN-128 Plug to 2 X Champ-64 connectors (11ft/3.3m)",
+      "price": 173,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R60074",
+      "desc": "Y-Cable: DIN-128 Plug to 2 X Champ-64 connectors (25ft/7.6m)",
+      "price": 242,
+      "cat": "C4.1 DSL Cables"
+    },
+    {
+      "pn": "504R20060",
+      "desc": "Alarm Cable, 50ft/15m solid wire 24AWG, DB-15 one end",
+      "price": 41,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R06055",
+      "desc": "Chassis-PFU MGMT cable (DB9/F->RJ45) 3m",
+      "price": 76,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60120",
+      "desc": "Console port cable, RJ45 to DB9 , (12ft/3.6m)",
+      "price": 12,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R20010",
+      "desc": "Craft i/f cable, DB-9 con. both ends, (12ft/3.6m)",
+      "price": 12,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60109",
+      "desc": "Craft2 i/f cable, Mini-jack to DB9M, 1.5m",
+      "price": 23,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60102",
+      "desc": "DB9 to RJ45 RS232 adapter / cable",
+      "price": 23,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "182K11030",
+      "desc": "Edge Connector for XR-239 Repeater",
+      "price": 69,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60106",
+      "desc": "Mgmt/Serial Server adapter, 15cm, RS232/V.24 DTE-DCE, RJ45-DB9F",
+      "price": 23,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60108",
+      "desc": "Mgmt/Serial Server adapter, 15cm, RS-232/V.24, DTE-DTE (null modem), RJ45-DB9M",
+      "price": 23,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R06065",
+      "desc": "ML600 to PFU Alarm Cable 0.3m/1ft",
+      "price": 12,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R06060",
+      "desc": "ML600 to PFU MGMT Cable (RJ45-RJ45) 0.3m/1ft",
+      "price": 20,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60052",
+      "desc": "ML650S E1/T1-Clock splitter cable (0.5m/1.6ft)",
+      "price": 23,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60110",
+      "desc": "PFU MGMT cable for ML680Dx models",
+      "price": 23,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60107",
+      "desc": "Serial Server cable 1.5m , RS-422/485, RJ45-DB9M",
+      "price": 23,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60119",
+      "desc": "Serial Server cable 1.5m for new D series, RS-422/485, RJ45-DB9F",
+      "price": 23,
+      "cat": "C4.2 Service, Alarm, Clock and Misc. cables"
+    },
+    {
+      "pn": "504R60094",
+      "desc": "ML620i DC Power Cable; 2.5m",
+      "price": 23,
+      "cat": "C4.3 Power and Grounding cables"
+    },
+    {
+      "pn": "504R20047",
+      "desc": "PWR/GND Harness - 20ft/6m open ended, 48VDC 14AWG, Gnd 10AWG",
+      "price": 41,
+      "cat": "C4.3 Power and Grounding cables"
+    },
+    {
+      "pn": "504R20043",
+      "desc": "PWR/GND Harness - 20ft/6m open ended, 48VDC 18AWG, Gnd 14AWG",
+      "price": 41,
+      "cat": "C4.3 Power and Grounding cables"
+    },
+    {
+      "pn": "506R32020",
+      "desc": "CPS3200U Converter Shelf",
+      "price": 616,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32040",
+      "desc": "CPS3200U Fan shelf",
+      "price": 792,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32060",
+      "desc": "Enclosure w/X-pair, Pole/Wall mount",
+      "price": 1380,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32070",
+      "desc": "Enclosure, Local  DC powered , Pole/Wall mount",
+      "price": 777,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32100",
+      "desc": "Enclosure, Local AC powered, Pole/Wall mount",
+      "price": 892,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32050",
+      "desc": "RFT-V Chassis slot filler",
+      "price": 29,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32011",
+      "desc": "RFT-V Down Converter Line Card",
+      "price": 386,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32041",
+      "desc": "RFT-V Fan for 4&5 slot shelf",
+      "price": 1139,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32022",
+      "desc": "RFT-V UpConverter 4slot Shelf",
+      "price": 1668,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32021",
+      "desc": "RFT-V UpConverter 5slot Shelf",
+      "price": 2013,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32030",
+      "desc": "RFT-V UpConverter Controller",
+      "price": 909,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "506R32010",
+      "desc": "RFT-V UpConverter Line Card",
+      "price": 426,
+      "cat": "C6. Remote Line Powered System (X-Pod/Tyco)"
+    },
+    {
+      "pn": "SVC-REMEXT",
+      "desc": "Extended Telephone assistance for 3 years",
+      "price": 3,
+      "cat": "D1.2 Extended TAC - Warranty – Valid ONLY at time of product purchase"
+    },
+    {
+      "pn": "SVC-ADVREP",
+      "desc": "Advanced HW Replacement Service",
+      "price": 5,
+      "cat": "D2.1 Extended HW & SW Warranty"
+    },
+    {
+      "pn": "SVC-SWSEC",
+      "desc": "EMS and embedded security and vulnerability fixes",
+      "price": 6,
+      "cat": "D2.1 Extended HW & SW Warranty"
+    },
+    {
+      "pn": "SVC-EXTHW1",
+      "desc": "Extended FR&R HW Warranty, each Yr",
+      "price": 2,
+      "cat": "D2.1 Extended HW & SW Warranty"
+    },
+    {
+      "pn": "SVC-FSTHW3",
+      "desc": "Fast Exchange Hardware Warranty, each Year",
+      "price": 3,
+      "cat": "D2.1 Extended HW & SW Warranty"
+    },
+    {
+      "pn": "SVC-REM1YR",
+      "desc": "Telephone assistance, per year",
+      "price": 1.5,
+      "cat": "D2.1 Extended HW & SW Warranty"
+    },
+    {
+      "pn": "SVC-EMSEOS",
+      "desc": "Telephone assistance, per year for EOL EMS versions within 1 year of EOL notice, contingent upon an upgrade order being placed.",
+      "price": 2,
+      "cat": "D2.1 Extended HW & SW Warranty"
+    },
+    {
+      "pn": "SVC-REM247",
+      "desc": "Upgrade to 24x7 Telephone Assistance",
+      "price": 2,
+      "cat": "D2.1 Extended HW & SW Warranty"
+    },
+    {
+      "pn": "SVC-BRONZE",
+      "desc": "Bronze Support",
+      "price": 4,
+      "cat": "D2.2 Bundled Annual Support Programs"
+    },
+    {
+      "pn": "SVC-GOLD+",
+      "desc": "Gold Plus Support",
+      "price": 9,
+      "cat": "D2.2 Bundled Annual Support Programs"
+    },
+    {
+      "pn": "SVC-GOLD",
+      "desc": "Gold Support",
+      "price": 6,
+      "cat": "D2.2 Bundled Annual Support Programs"
+    },
+    {
+      "pn": "SVC-PLAT",
+      "desc": "Platinum Support",
+      "price": 8,
+      "cat": "D2.2 Bundled Annual Support Programs"
+    },
+    {
+      "pn": "SVC-SWMTC",
+      "desc": "Embedded Software Maintenance Service",
+      "price": 350,
+      "cat": "D2.3 Unbundled Annual Support Programs"
+    },
+    {
+      "pn": "SVC-EXTEMS",
+      "desc": "Extended EMS Warranty, per year",
+      "price": 30,
+      "cat": "D2.3 Unbundled Annual Support Programs"
+    },
+    {
+      "pn": "SVC-SWUPDT",
+      "desc": "Embedded Software Upgrade Service",
+      "price": 20,
+      "cat": "D2.4 Non-Contracted Services (Per-event, Time and Material basis)"
+    },
+    {
+      "pn": "EMSL00103",
+      "desc": "EMS Upgrade License",
+      "price": 50,
+      "cat": "D2.4 Non-Contracted Services (Per-event, Time and Material basis)"
+    },
+    {
+      "pn": "SVC-TMFRR",
+      "desc": "Standard HW Repair and Return Service",
+      "price": 20,
+      "cat": "D2.4 Non-Contracted Services (Per-event, Time and Material basis)"
+    },
+    {
+      "pn": "SVC-NETANA",
+      "desc": "Network Analysis",
+      "price": 350,
+      "cat": "D2.5 Professional Services - EF and I Services"
+    },
+    {
+      "pn": "SVC-ONSINS",
+      "desc": "Onsite Installation Assistance",
+      "price": 2500,
+      "cat": "D2.5 Professional Services - EF and I Services"
+    },
+    {
+      "pn": "SVC-NTWKPL",
+      "desc": "Pre-Sales Network Planning and Design",
+      "price": 200,
+      "cat": "D2.5 Professional Services - EF and I Services"
+    },
+    {
+      "pn": "SVC-TRNACT",
+      "desc": "Instructor-led Formal training at Actelis",
+      "price": 1400,
+      "cat": "D2.6 Professional Services - Educational Services (Training)"
+    },
+    {
+      "pn": "SVC-TRNCUS",
+      "desc": "Onsite training at the customer's premise",
+      "price": 1,
+      "cat": "D2.6 Professional Services - Educational Services (Training)"
+    },
+    {
+      "pn": "SVC-WEBTRN",
+      "desc": "Web-based training",
+      "price": 1200,
+      "cat": "D2.6 Professional Services - Educational Services (Training)"
+    }
+  ],
+  "discounts": [
+    {
+      "cat": "A1.1 GL800 Solutions",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A1.2 GL9000 Headend Solutions",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.15,
+      "emeaEndUser": 0.1
+    },
+    {
+      "cat": "A1.3 GL9000 CPEs",
+      "naReseller": 0.1,
+      "naEndUser": 0.05,
+      "regBonus": 0,
+      "emeaReseller": 0.1,
+      "emeaEndUser": 0.05
+    },
+    {
+      "cat": "A1.4 GL900 Headend Solutions",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.15,
+      "emeaEndUser": 0.1
+    },
+    {
+      "cat": "A1.5 GL900 CPEs",
+      "naReseller": 0.1,
+      "naEndUser": 0.05,
+      "regBonus": 0,
+      "emeaReseller": 0.1,
+      "emeaEndUser": 0.05
+    },
+    {
+      "cat": "A2. ML600 Family",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A2.1 ML600D Family",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A3.1 Power Supplies for GL800/GL900/ML500/ML600/ML700",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A3.2 GL800/GL900ML500/ML600/ML700 Related Items",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A4.1 Shelves",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A4.2 SDU (Service Dispatch Units)",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A4.3 MLU (Multiport Line Units)",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A4.4 CHS-200 Related Items",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A4.5 CHS-2000 Related Items",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A4.6 ML230 Configuration Examples",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A4.7 ML2300 Configuration Examples",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "A8.1 BBA Cards",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.4,
+      "emeaEndUser": 0.3
+    },
+    {
+      "cat": "B2.1 MetaASSIST EMS Site Licenses",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.3,
+      "emeaEndUser": 0.2
+    },
+    {
+      "cat": "B2.2 MetaASSIST EMS NE License Keys",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.3,
+      "emeaEndUser": 0.2
+    },
+    {
+      "cat": "B2.3 MetaASSIST EMS Feature Licenses",
+      "naReseller": 0.33,
+      "naEndUser": 0.33,
+      "regBonus": 0.07,
+      "emeaReseller": 0.3,
+      "emeaEndUser": 0.2
+    },
+    {
+      "cat": "C1. SFP Transceivers",
+      "naReseller": 0.1,
+      "naEndUser": 0,
+      "regBonus": 0,
+      "emeaReseller": 0.1,
+      "emeaEndUser": 0
+    },
+    {
+      "cat": "C4.1 DSL Cables",
+      "naReseller": 0.1,
+      "naEndUser": 0,
+      "regBonus": 0,
+      "emeaReseller": 0.1,
+      "emeaEndUser": 0
+    },
+    {
+      "cat": "C4.3 Power and Grounding cables",
+      "naReseller": 0.1,
+      "naEndUser": 0,
+      "regBonus": 0,
+      "emeaReseller": 0.1,
+      "emeaEndUser": 0
+    }
+  ],
+  "services": [
+    {
+      "pn": "SVC-ADVREP",
+      "desc": "Advanced HW Replacement Service",
+      "lpString": "5% of Purchase Price / yr",
+      "listPrice": 0.05,
+      "cat": "D2.1 Extended Warranty"
+    },
+    {
+      "pn": "SVC-BRONZE",
+      "desc": "Bronze Support",
+      "lpString": "4% of Purchase Price / yr",
+      "listPrice": 0.04,
+      "cat": "D2.2 Support Programs"
+    },
+    {
+      "pn": "SVC-GOLD",
+      "desc": "Gold Support",
+      "lpString": "6% of Purchase Price / yr",
+      "listPrice": 0.06,
+      "cat": "D2.2 Support Programs"
+    },
+    {
+      "pn": "SVC-GOLD+",
+      "desc": "Gold Plus Support",
+      "lpString": "9% of Purchase Price / yr",
+      "listPrice": 0.09,
+      "cat": "D2.2 Support Programs"
+    },
+    {
+      "pn": "SVC-PLAT",
+      "desc": "Platinum Support",
+      "lpString": "8% of Purchase Price / yr",
+      "listPrice": 0.08,
+      "cat": "D2.2 Support Programs"
+    },
+    {
+      "pn": "SVC-REM1YR",
+      "desc": "Telephone Assistance, per year",
+      "lpString": "1.5% of Purchase Price / yr",
+      "listPrice": 0.015,
+      "cat": "D2.1 Extended Warranty"
+    },
+    {
+      "pn": "SVC-EXTHW1",
+      "desc": "Extended FR&R HW Warranty",
+      "lpString": "2% of Purchase Price / yr",
+      "listPrice": 0.02,
+      "cat": "D2.1 Extended Warranty"
+    },
+    {
+      "pn": "SVC-NETANA",
+      "desc": "Network Analysis",
+      "lpString": "$350/hr + expenses",
+      "listPrice2": 350,
+      "cat": "D2.5 Prof. Services"
+    },
+    {
+      "pn": "SVC-ONSINS",
+      "desc": "Onsite Installation Assistance",
+      "lpString": "$2,500/day + T&E",
+      "listPrice2": 2500,
+      "cat": "D2.5 Prof. Services"
+    }
+  ]
+}
